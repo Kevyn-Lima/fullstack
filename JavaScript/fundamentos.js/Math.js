@@ -1,0 +1,6 @@
+/* Utilizando Math para calcular uma area de circuferencia */
+
+const raio = 5.6
+const area = Math.PI * Math.pow(raio,2)
+
+console.log(area)
