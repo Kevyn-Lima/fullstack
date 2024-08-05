@@ -29,6 +29,6 @@ function Pessoa(){
         self.idade++
         console.log(self.idade)
     }/**.bind(this)/ Aqui funcionou da seguinte forma, o this estava sendo passado como parametro, e acabou sendo o objeto amarrado
-    para se puxar a idade, criamos uma função e instanciamos ela para realizar as validações. */, 1000)
+    para se puxar a idade, criamos uma função e instanciamos ela para realizar as validações... */, 1000)
 }
 new Pessoa

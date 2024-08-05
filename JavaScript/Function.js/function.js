@@ -67,5 +67,5 @@ console.log(`Soma sem passar parametros = ${soma1()}, `, `Soma passando um param
 function soma2(a = 1, b = 2, c = 3){
     //Com um simples return ja é o suficiente
     return a + b + c
-}
+} 
 console.log(soma2())
