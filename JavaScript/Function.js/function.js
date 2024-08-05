@@ -29,3 +29,43 @@ console.log(obj.falar())
 function run(fun){
     fun()
 }
+
+/** Utilizando Parâmetros variaveis
+ * Explicando de uma forma simples, voce pode criar uma função, sem passar parametros, e utilizar do arguments como um array, para passar por eles
+ * segue o exemplo abaixo.
+ * A propriedade arguments: arguments representa os argumentos correspondentes a invocação mais recente da função
+ */
+
+function soma(){ //Não foi passado parametros
+    let soma = 0; //Aqui passamos soma = 0, e vamos utilizar um for in, para percorrer a propriedade arguments 
+    for (i in arguments){
+        soma += arguments[i]
+    }
+    return soma
+}
+
+console.log(soma(1))
+console.log(soma(' ', '=', ' ', 'a', 'b', 'c'))
+
+/**É uma forma interessante de se conseguir utilizar, porem atualmente está sendo subistituido pelo REST/SPREAD dependendo do contexto em que
+ * se utiliza Logo utilizaremos para validar
+ */
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/** Aqui vamos dar uma olhada em Parametros Padrão, introduzida pelo ES6*/
+
+/** De uma forma "Old School" vamos dar um exemplo de como se utilizava antes do ES6 */
+function soma1(a,b,c){
+    a = a || 1
+    b = b || 1
+    c = c || 1
+    return a + b + c
+}
+
+console.log(`Soma sem passar parametros = ${soma1()}, `, `Soma passando um parametro  = ${soma1(2)}, `, `Soma passando os três parametros = ${soma1(2,4,5)}`)
+
+/** Com a atualização do ES2015 agora se pode definir qual é o padrão dos parametros */
+function soma2(a = 1, b = 2, c = 3){
+    //Com um simples return ja é o suficiente
+    return a + b + c
+}
+console.log(soma2())
