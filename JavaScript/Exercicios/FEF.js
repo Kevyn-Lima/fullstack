@@ -181,5 +181,273 @@ function anoBissexto(ano){
         return false
     }
 }
-console.log(anoBissexto(2024))
+//console.log(anoBissexto(2024))
 
+/** Exercicio 12 */
+
+function fatorial(numero){
+    if(numero == 0){
+        return 1
+    }else{
+        return numero * fatorial(numero -1)
+    }
+}
+//console.log(fatorial(10))
+
+/** Exercicio 13 */
+
+function diaDaSemana(dia){
+    switch(dia){
+        case 1: 
+            return 'Fim de semana' 
+        case 2: case 3: case 4: case 5: case 6:
+            return 'Dia útil'
+        case 7: 
+            return 'Fim de semana'
+        default:
+            return 'Dia Inválido'
+    }
+}
+//console.log(diaDaSemana(1))
+
+/** Exercicio 14 */
+
+function fruta(nomeFruta){
+    switch(nomeFruta){
+        case'Maçã':
+            return 'Não vendemos esta fruta aqui'
+            break
+        case 'Kiwi':
+            return 'Estamos com escassez de kiwis'
+            break
+        case 'Melancia':
+            return 'Aqui está, são 3 reais o quilo'
+            break
+        default:
+            return 'Erro, Não encontramos o que procura!'
+    }
+}
+//console.log(fruta('Melancia'))
+
+// Segunda
+
+/** Exercicio 15 */
+function compraVeiculo(carro){
+    switch(carro){
+        case 'Hatch':
+            console.log("Compra efetuada com sucesso!")
+            break
+        case 'Sedans': case 'Motocicleta': case 'Caminhonete':
+            console.log("Tem certeza que não prefere este modelo?")
+            break
+        default:
+            console.log('Não trabalhamos com este tipo de automóvel aqui')
+    }
+}
+/*compraVeiculo('Hatch')
+compraVeiculo('Caminhonete')
+compraVeiculo('Motocicleta')
+compraVeiculo('Sedans')
+compraVeiculo('Jetsky')*/
+
+/** Exercicio 16 */
+
+function calculadora(num1, operador, num2){
+    switch(operador){
+        case '+':
+            return num1 + num2;
+        case '-':
+            return num1 - num2
+        case '*':
+            return num1 * num2
+        case '/':
+            return num1 / num2
+        default:
+            return 'Operação invalida!'
+    }
+}
+/*
+console.log(calculadora(2, '+', 2))
+console.log(calculadora(2, '-', 3));
+console.log(calculadora(2, '*', 3));
+console.log(calculadora(2, '/', 3));
+console.log(calculadora(2, 'a', 3));*/
+
+/** Exercicio 17 */
+
+function aumentoSalario(plano, salarioAtual){
+    switch(plano){
+        case 'A':
+            return salarioAtual = salarioAtual + (salarioAtual * 0.10)
+        case 'B':
+            return salarioAtual = salarioAtual + (salarioAtual * 0.15)
+        case 'C':
+            return salarioAtual = salarioAtual + (salarioAtual * 0.20)
+        default:
+            return 'Plano Invalido'
+    }
+}
+/*
+console.log(aumentoSalario('A', 1800))
+console.log(aumentoSalario('B', 1800))
+console.log(aumentoSalario('C', 1800))
+console.log(aumentoSalario('D', 1800))*/
+
+/** Exercicio 18 */
+function numeroPorExtenso(numero){
+    switch(numero){
+        case 0:
+            return 'Zero'
+        case 1:
+            return 'Um'
+        case 2:
+            return 'Dois'
+        case 3:
+            return 'Três'
+        case 4:
+            return 'Quatro'
+        case 5:
+            return 'Cinco'
+        case 6:
+            return 'Seis'
+        case 7:
+            return 'Sete'
+        case 8:
+            return 'Oito'
+        case 9:
+            return 'Nove'
+        case 10:
+            return 'Dez'
+        default:
+            return 'Número fora do intervalo.'
+    }
+}/*
+console.log(numeroPorExtenso(0))
+console.log(numeroPorExtenso(1))
+console.log(numeroPorExtenso(2))
+console.log(numeroPorExtenso(3))
+console.log(numeroPorExtenso(4))
+console.log(numeroPorExtenso(5))
+console.log(numeroPorExtenso(6))
+console.log(numeroPorExtenso(7))
+console.log(numeroPorExtenso(8))
+console.log(numeroPorExtenso(9))
+console.log(numeroPorExtenso(10))
+console.log(numeroPorExtenso(11))*/
+
+/** Exercicio 19 */
+
+function calculoProduto(codItem, qtdItem){
+    switch(codItem){
+        case 100:
+            console.log(`R$${qtdItem * 3.00}`)
+            break
+        case 200:
+            console.log(`R$${qtdItem * 4.00}`)
+            break
+        case 300:
+            console.log(`R$${qtdItem * 5.50}`)
+            break
+        case 400:
+            console.log(`R$${qtdItem * 7.50}`)
+            break
+        case 500:
+            console.log(`R$${qtdItem * 3.50}`)
+            break
+        case 600:
+            console.log(`R$${qtdItem * 2.80}`)
+            break
+        default:
+            console.log('Produto não existente')
+    }
+}
+
+/*calculoProduto(150,2)
+calculoProduto(100,2)
+calculoProduto(200,2)
+calculoProduto(300,2)
+calculoProduto(400,2)
+calculoProduto(500,2)
+calculoProduto(600,2)*/
+
+/** Exercicio 20*/
+
+function sacarDinheiro(valorSaque){ /** Aqui criamos uma função que recebe como paramêtro o valor a ser sacado*/
+    let contador100 = 0;
+    let contador50 = 0;
+    let contador10 = 0;
+    let contador5 = 0;
+    let contador1 = 0;
+    /** Acima, esta declarado as cedulas disponiveis, como contadoras, = 0 
+     * Abaixo está declarado uma variavel, que recebe a função com o parametro
+    */
+    let valorNota = calcularValorNota(valorSaque)
+    /** Aqui temos  */
+    while(valorSaque >= valorNota){
+        switch(valorNota){
+            case 100:
+                valorSaque -= 100
+                contador100++
+                break
+            case 50:
+                valorSaque -=50
+                contador50++
+                break
+            case 10:
+                valorSaque -=10
+                contador10++
+                break
+            case 5: 
+                valorSaque -=5
+                contador5++
+                break
+            case 1:
+                valorSaque -= 1
+                contador1++
+                break 
+        }
+        valorNota = calcularValorNota(valorSaque)
+    }
+    return elaborarResultado(contador100, contador50, contador10, contador5, contador1)
+}
+
+    function calcularValorNota(valorSaque){
+        if(valorSaque >= 100){
+            return 100
+        }else if(valorSaque >= 50){
+            return 50
+        }else if(valorSaque >= 10){
+            return 10
+        }else if(valorSaque >= 5){
+            return 5
+        }else if(valorSaque >= 1){
+            return 1
+        }         
+}
+
+function elaborarResultado(contador100, contador50, contador10, contador5, contador1){
+    let resultado = ''
+
+    if(contador100 > 0){
+        resultado +=` ${contador100} nota(s) de R$ 100.`
+    }
+    if (contador50 > 0) {
+        resultado += ` ${contador50} nota(s) de R$ 50. `
+    }
+
+    if (contador10 > 0) {
+        resultado += ` ${contador10} nota(s) de R$ 10. `
+    }
+
+    if (contador5 > 0) {
+        resultado += ` ${contador5} nota(s) de R$ 5. `
+    }
+
+    if (contador1 > 0) {
+        resultado += ` ${contador1} nota(s) de R$ 1. `
+    }
+
+    return resultado
+}
+
+console.log(sacarDinheiro(153));
