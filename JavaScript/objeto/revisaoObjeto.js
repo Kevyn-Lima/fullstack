@@ -109,4 +109,48 @@ const pessoaConstante = Object.freeze({noma: 'Lucas'})
 console.log(pessoaConstante)
 
 
+//////////////////////////////////////////////////////////////
+/** Algumas funções importantes e interessantes dentro do Object */
 
+const pessoa1 = {
+    nome: 'Rebecca',
+    idade: 23,
+    peso: 35
+}
+
+/** Criado acima um objeto normalmente com notação literal; abaixo utilizaremos as funções keys e values para acessar chave e valores do objeto. */
+
+console.log(Object.keys(pessoa1))
+console.log(Object.values(pessoa1))
+
+/** Sendo possivel também pegar uma lista(array) das chaves e valores, utilizando o entries, assim ele tras um array com chave/valor*/
+console.log(Object.entries(pessoa1))
+
+/** Sendo também possível percorrer esse array se desejado, um exemplo */
+
+Object.entries(pessoa1).forEach(([chave, valor]) => { // Utilizando o destructuring ([chave, valor]), vamos acessar os dados e puxar eles do array
+    console.log(`${chave}: ${valor}`)
+})
+
+/** Utilizaremos abaixo o Object.defineProperty(), ele define uma propriedade dentro do objeto, sendo que voce pode passar definições melhores
+ *  como por exemplo, voce deseja que ela não seja visivel, ou não pode ser acessada, sendo melhor para setar atributos mais completos nessa propriedade
+ */
+
+Object.defineProperty(pessoa1, 'dataNascimento', {
+    enumerable: true, // essa propriedade pode ser listada normalmente
+    writable: false, // porem essa propriedade não poderá ser sobrescrita, ou escrita novamente.
+    value: '01/02/1999'
+})
+
+pessoa1.dataNascimento = '02/04/2023'
+console.log(pessoa1.dataNascimento)
+
+console.log(Object.keys(pessoa1))
+
+/** Utilizando o Assign voce pode concatenar com o objeto primario, ou seja, os objeto passados como paramentos após o primeiro, seja adicionado a ele */
+const dest = {a:1}
+const o1 = {b:2}
+const o2 = {c:3}
+const obj3 = Object.assign(dest, o1, o2)
+
+console.log(obj3)
