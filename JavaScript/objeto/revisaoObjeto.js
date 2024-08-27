@@ -107,3 +107,6 @@ console.log(pessoa.nome)
 
 const pessoaConstante = Object.freeze({noma: 'Lucas'})
 console.log(pessoaConstante)
+
+
+
