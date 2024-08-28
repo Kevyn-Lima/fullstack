@@ -154,3 +154,4 @@ const o2 = {c:3}
 const obj3 = Object.assign(dest, o1, o2)
 
 console.log(obj3)
+
