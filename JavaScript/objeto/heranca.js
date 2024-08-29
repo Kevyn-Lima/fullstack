@@ -85,3 +85,37 @@ for(let key in filha2){
 }
 
 /** E no exemplo acima, nós estamos percorrendo o Objeto para listar e ver o que de fato pertence a ele ou é herdado. */
+
+/** Exemplo 04 de Herança */
+/** Instanciando e criando Objetos para saber se apontam para o mesmo prototipo */
+
+function MeuObjeto(){}
+console.log(MeuObjeto.prototype)
+
+const obj4 = new MeuObjeto
+const obj5 = new MeuObjeto
+
+console.log(obj4.__proto__ === obj5.__proto__)
+console.log(obj4.__proto__ === MeuObjeto.prototype)
+
+MeuObjeto.prototype.nome = 'Anonimo'
+MeuObjeto.prototype.falar = function(){
+    console.log(`Bom dia ! meu nome é ${this.nome}`)
+}
+
+obj4.falar()
+obj5.nome = 'Antonio'
+obj5.falar()
+
+const obj6 = {}
+obj6.__proto__ = MeuObjeto.prototype
+obj6.nome = 'Obj3'
+obj6.falar()
+
+/** O exemplo acima, traz algumas confusões, porém lógicas, 
+ *  como uma função apontar como prototipo um Objeto, onde uma vez que instanciada
+ *  a função passa a ser objeto.
+ *  porém, ela ainda pode receber parametros e funções internas, onde se colocarmos ela como o prototipo.
+ *  ela pode passar suas funções para os demais objetos instanciados. que é ali no caso, a propriedade nome e a função falar
+ *  onde podemos ver claramente que suas instancias, podem acessar uma vez que foi declarada como prototipo.
+ */
