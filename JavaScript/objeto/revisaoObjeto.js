@@ -155,3 +155,34 @@ const obj3 = Object.assign(dest, o1, o2)
 
 console.log(obj3)
 
+/**Object.preventExtensions
+ *  uma função que não permite a extensão do Objeto, ou seja, não permite que seja adicionado novos atributos dentro do objeto. * 
+ */
+
+const product = Object.preventExtensions({
+    nome: 'Qualquer',
+    preco: 1.99,
+    tag: 'Promoção'
+})
+console.log('Extensível: ', Object.isExtensible(product))
+product.nome = 'Borracha'
+product.descricao = 'Borracha escolar branca'
+delete product.tag
+console.log(product)
+/** É uma função de Objeto que permite realizar alterações, porém não deixa adicionar atributos nele. */
+
+/** Object.seal 
+ * um Objeto que se mantem selado, ou seja, apenas consigo alterar seus atributos, porém não posso excluir ou adicionar novos
+*/
+
+const person = {
+    name: 'Julio',
+    age: 35
+}
+Object.seal(person)
+console.log('Sealed: ', Object.isSealed(person))
+
+person.name = 'Lucas'
+person.lastName = 'Silva'
+delete person.name
+console.log(person)
