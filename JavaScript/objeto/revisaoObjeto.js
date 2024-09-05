@@ -186,3 +186,4 @@ person.name = 'Lucas'
 person.lastName = 'Silva'
 delete person.name
 console.log(person)
+

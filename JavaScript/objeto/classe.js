@@ -31,7 +31,7 @@ const contas = new cicloFinanceiro(6, 2024)
 contas.addLancamentos(salario, contaDeLuz)
 console.log(contas.sumario())
 
-/** Um Segundo exemplo de classe */
+/** Um Segundo exemplo de classe com Herança em JS*/
 
 class Avo {
     constructor(sobrenome){
