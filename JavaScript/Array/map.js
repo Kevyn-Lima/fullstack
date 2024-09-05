@@ -49,6 +49,30 @@ console.log(carrinho)
 const paraObj = json => JSON.parse(json)
 const apenasPreco = produto => produto.preco
 
-const resultadoCarrinho = carrinho.map(paraObj).map(apenasPreco)
+//const resultadoCarrinho = carrinho.map(paraObj).map(apenasPreco)
 
-console.log(resultadoCarrinho)
+//console.log(resultadoCarrinho)
+
+/** Um terceiro exemplo de map()
+ * 
+ * Realizando uma implementação do map()
+ */
+
+Array.prototype.map2 = function(callBack){
+    const newArray = []
+    for(let i = 0; i < this.length; i++){
+        newArray.push(callBack(this[i], i, this))
+    }
+    return newArray
+}
+
+const carrinhos = [
+    '{ "nome": "Borracha", "preco": 3.45 }',
+    '{ "nome": "Caderno", "preco": 13.90 }',
+    '{ "nome": "Kit de Lapis", "preco": 41.22 }',
+    '{ "nome": "Caneta", "preco": 7.50 }'
+]
+
+const resultadoCarrinhos = carrinhos.map2(paraObj).map2(apenasPreco)
+
+console.log(resultadoCarrinhos)
