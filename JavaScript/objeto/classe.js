@@ -12,7 +12,7 @@ class cicloFinanceiro{
         this.ano = ano
         this.lancamento = []
     }
-    addLancamentos(...lancamento){
+    addLancamentos(...lancamento){ /** Spread */
         lancamento.forEach(l => this.lancamento.push(l))
     }
     sumario(){
@@ -30,3 +30,26 @@ const contaDeLuz = new lancamento('Luz', -220)
 const contas = new cicloFinanceiro(6, 2024)
 contas.addLancamentos(salario, contaDeLuz)
 console.log(contas.sumario())
+
+/** Um Segundo exemplo de classe */
+
+class Avo {
+    constructor(sobrenome){
+        this.sobrenome = sobrenome
+    }
+}
+class Pai extends Avo{
+    constructor(sobrenome, profissao = 'Professor'){
+        super(sobrenome)
+        this.profissao = profissao
+    }
+}
+
+class Filho extends Pai{
+    constructor(){
+        super('Silva')
+    }
+}
+
+const filho = new Filho
+console.log(filho)
