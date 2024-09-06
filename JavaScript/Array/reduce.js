@@ -33,13 +33,13 @@ console.log(alunos.map(a => a.bolsista).reduce(algumBolsista))
 
 /** Vendo como o reduce funciona por dentro */
 
-Array.prototype.reduce2 = function(callBack, valorInicial){
-    const indiceInicial = valorInicial ? 0 : 1
-    let acumulador = valorInicial || this[0]
-    for(let i = indiceInicial; i < this.length; i++){
-        acumulador = callBack(acumulador, this[i], i, this)
+Array.prototype.reduce2 = function(callBack, valorInicial){ // declarando o reduce pelo seu prototipo, e passando os parametros dele, a callback e o valor inicial
+    const indiceInicial = valorInicial ? 0 : 1 // validando se o indice inicial tem um valor igual a 0, se não será o 1
+    let acumulador = valorInicial || this[0] // Aqui atribuimos a acumulador, o valor inicial se for setado, ou a posição 0 do indice
+    for(let i = indiceInicial; i < this.length; i++){ //validação para percorrer o array
+        acumulador = callBack(acumulador, this[i], i, this) // Acionando o callback
     }
-    return acumulador
+    return acumulador // Retornando a variavel
 }
 
 const soma = (total, valor) => total + valor
