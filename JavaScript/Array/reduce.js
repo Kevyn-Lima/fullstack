@@ -21,3 +21,27 @@ const resultado = alunos.map(a => a.nota).reduce(function(acumulador, atual){
     return acumulador + atual
 },/** Aqui seria setado o valor do acumulador por exemplo 10*/ 0)
 console.log(resultado)
+
+/** Exemplo 02 sobre reduce, aqui vamos retirar todos os alunos bolsistas e validar se são ou não e se tem algum que é bolsista*/
+
+
+const todosBolsistas = (resultado, bolsista) => resultado && bolsista /** Arrow function que valida se todos os bolsistas são true ou não */
+console.log(alunos.map(a => a.bolsista).reduce(todosBolsistas))
+
+const algumBolsista = (resultado, bolsista) => resultado || bolsista /** Arrow function que valida se algum é true */
+console.log(alunos.map(a => a.bolsista).reduce(algumBolsista))
+
+/** Vendo como o reduce funciona por dentro */
+
+Array.prototype.reduce2 = function(callBack, valorInicial){
+    const indiceInicial = valorInicial ? 0 : 1
+    let acumulador = valorInicial || this[0]
+    for(let i = indiceInicial; i < this.length; i++){
+        acumulador = callBack(acumulador, this[i], i, this)
+    }
+    return acumulador
+}
+
+const soma = (total, valor) => total + valor
+const nums = [1, 2, 3, 4, 5, 6]
+console.log(nums.reduce2(soma, 21))
