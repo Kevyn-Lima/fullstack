@@ -1,5 +1,8 @@
 /** Exercicios de fundaments, estruturas de controle e funções.*/
 
+const { todo } = require("node:test")
+const { normalize } = require("path")
+
 /** Exercicio 01 */
 
 function soma(a, b){
@@ -569,4 +572,177 @@ function calcularTempo(alturaMenor, TaxaAlturaMenor, alturaMaior, taxaAlturaMaio
     return qtdAnos
 }
 
-console.log(calcularCrescimento(150, 2, 130, 4))
+//console.log(calcularCrescimento(150, 2, 130, 4))
+
+/** Exercicio 28 */
+
+const vetor = [1,2,3,5,4,7,8,8,4,5,7,8,9,5,6]
+
+function imprimePareImpar(vetor){
+    let qtdImpar = 0
+    let qtdPares = 0
+    for(let i = 0; i < vetor.length; i++){
+        if(vetor[i] % 2 == 0){
+            qtdPares++
+        } else{
+            qtdImpar++
+        }
+    }
+    console.log(`${qtdPares}, numeros pares e ${qtdImpar} numeros impares`)
+}
+
+//imprimePareImpar(vetor)
+
+/** Exercicio 29 */
+
+const vetor2 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+
+function validaQtd(vetor2){
+    let qtdDentro = 0
+    let qtdFora = 0
+    for(let i = 0; i < vetor2.length; i++){
+        if(vetor2[i] >= 10 && vetor2[i] <= 20){
+            qtdDentro++
+        } else{
+            qtdFora++
+        }
+    }
+    
+    console.log(`${qtdDentro} Numeros dentro do intervalo de 10 a 20, e ${qtdFora} numeros fora`)
+}
+
+//validaQtd(vetor2)
+
+/** Exercicio 30 */
+
+const vetor3 = [10,2,4,5,2,6,4,7,7,89,894,568,754,265,5,26,1,2,0,34,6,888]
+
+function maiorMenor(vetor3){
+    let maior = vetor3[0]
+    let menor = vetor3[0]
+
+    for(let i = 0; i < vetor3.length; i++){
+        if(vetor3[i] > maior){
+            maior = vetor3[i]
+        }else if(vetor3[i] < menor){
+            menor = vetor3[i] 
+        }
+    }
+    return[maior, menor]
+    //console.log(`O Maior numero é ${maior}, e o menor numero é ${menor}`)
+}
+//console.log(maiorMenor(vetor3))
+
+/** Exercicio 31 */
+
+const vetor4 = [-1,-2,-4,-6,-8,-7,0,4,5,6,8,-7,-5,-10,-45,45,-5]
+
+function numsNegativos(vetor4){
+    let numNegativo = 0
+    for(let i = 0; i < vetor4.length; i++){
+        if(vetor4[i] < 0){
+            numNegativo++
+        }
+    }
+    console.log(numNegativo)
+}
+//numsNegativos(vetor4)
+
+/** Exrecicio 32 */
+
+const aritimetica = [2,3,3,5,7,10]
+
+function calculaMediaAritimetica(aritimetica){
+    let nota = 0, totalNotas = 0, media
+    for(let i = 0; i < aritimetica.length; i++){
+        totalNotas++
+         nota += aritimetica[i] 
+         media = nota / totalNotas
+    }
+    console.log(media)
+}
+//calculaMediaAritimetica(aritimetica)
+
+/** Outro jeito de fazer o exercicio 32 */
+
+function mediaVetor(aritimetica){
+    let soma = 0
+    for(let i = 0; i < aritimetica.length; i++){
+        soma += aritimetica[i]
+    }
+    return soma/aritimetica.length
+}
+//console.log(mediaVetor(aritimetica))
+
+/** Exercicio 33 */
+
+const vetorInteiro = [1,2,3,4]
+const vetorString = ['Ana','Julio','Paulo','Ricardo']
+const vetorDouble = [1.7, 1.4, 1.8, 1.75]
+const todos = vetorInteiro.concat(vetorString, vetorDouble)
+
+function concatenar(...args){
+    resultado = []
+    for(let i =0; i< arguments.length; i++){
+        resultado = resultado.concat(arguments[i])
+    }
+    return resultado
+}
+
+/*console.log(concatenar(vetorInteiro, vetorDouble))
+
+console.log(concatenar(vetorDouble, vetorString))
+
+console.log(todos)*/
+
+/** Exercicio 34 */
+
+function retornString(string1, string2){
+   let estaContido = true;
+   for(let i = 0; i < string1.length; i++){
+        let caracteresString1 = string1.charAt(i).toLowerCase()
+        for(let j = 0; j < string2.length; j++){
+            let caracteresString2 = string2.charAt(j).toLowerCase()
+            if(caracteresString1 == caracteresString2){
+                estaContido = true
+                break
+            } else{
+                estaContido = false
+            }
+        }
+        if(!estaContido){
+            return estaContido
+        }
+   }
+   for(let i = 0; i < string2.length; i++){
+        let caracteresString2 = string2.charAt(i).toLowerCase()
+        for(let j = 0; j < string1.length; j++){
+            let caracteresString1 = string1.charAt(i).toLowerCase()
+            if(caracteresString2 == caracteresString1){
+                estaContido = true
+                break
+            } else{
+                estaContido = false
+            }
+        }
+        if(!estaContido){
+            return estaContido
+        }
+   }
+   return estaContido
+}
+
+//console.log(retornString('Paulo', 'paula'))
+/** Exercicio 35 */
+
+const vetorPilha = [1,2,3,4,5]
+const vetorAdiciona = [6,7,8,9,10]
+
+function adicionaVetor(vetorPilha, vetorAdiciona){
+    for(let i = 0; i < vetorAdiciona.length; i++){
+        vetorPilha.push(vetorAdiciona[i])
+    }
+    return vetorPilha
+}
+
+//console.log(adicionaVetor(vetorPilha, vetorAdiciona))
