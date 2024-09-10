@@ -746,3 +746,116 @@ function adicionaVetor(vetorPilha, vetorAdiciona){
 }
 
 //console.log(adicionaVetor(vetorPilha, vetorAdiciona))
+
+/** Exercicio 36 */
+
+const vetor5 = [1,2,3,4,5,6]
+
+function devolveMultiplicado(vetor5, inteiro){
+    let vetorMultiplica = []
+    for(let i = 0; i < vetor5.length; i++){
+        vetorMultiplica.push(vetor5[i]*inteiro)
+    }
+    console.log(vetorMultiplica)
+}
+
+
+function maiorQueCinco(vetor5, inteiro){
+    const vetorMaior5 = []
+    for(let i = 0; i < vetor5.length; i++){
+        if(vetor5[i] > 5){
+            vetorMaior5.push(vetor5[i] * inteiro)
+        }
+    }
+    console.log(vetorMaior5)
+}
+
+//devolveMultiplicado(vetor5, 3)
+//maiorQueCinco(vetor5, 5)
+
+/** Exercicio 37 */
+function progressaoAritimetica(n,a1,r){
+    let soma = 0
+    let termos = []
+    for(let i = 0; i < n; i++){
+        let termo = a1 + i + r // Formula do termo geral de PA
+        termos.push(termo)
+        soma += termo
+    }
+    //console.log("Progressão Aritmética (PA):", termos);
+    //console.log("Soma dos termos da PA:", soma);
+}
+
+
+function progressaoGeometrica(n, a1, r) {
+    let soma = 0;
+    let termos = [];
+  
+    for (let i = 0; i < n; i++) {
+      let termo = a1 * Math.pow(r, i); // Fórmula do termo geral da PG
+      termos.push(termo);
+      soma += termo;
+    }
+  
+    //console.log("Progressão Geométrica (PG):", termos);
+    //console.log("Soma dos termos da PG:", soma);
+  }
+  //progressaoAritimetica(5,10,15)
+  //progressaoGeometrica(5,10,15)
+
+  /**Exercicio 38 */
+
+  function impar(inicio = 0, fim = 100){
+    if(inicio > fim){
+        inicio = fim + inicio
+        fim = inicio - fim
+        inicio = inicio - fim
+    }
+    for(let i = inicio; i <= fim; i++){
+        if(i % 2 == 1){
+            console.log(i)
+        }
+    }
+}
+
+//impar(19, 3)
+
+/** Exercicio 39 */
+
+const vetor01 = [1,2,3,4,5]
+const vetor02 = [6,7,8,9,10]
+
+function trocaArray(vetor01, vetor02){
+    if(vetor01.length === vetor02.length){
+        for(let i=0; i < vetor01.length; i++){
+            vetor01[i] = vetor01[i] + vetor02[i]
+            vetor02[i] = vetor01[i] - vetor02[i]
+            vetor01[i] = vetor01[i] - vetor02[i]
+        }
+    }else{
+        return 'Vetores de tamanhos diferentes'
+    }
+    console.log('Novo vetor01: ' + vetor01)
+    console.log('Novo vetor02: ' + vetor02)
+}
+//trocaArray(vetor01, vetor02)
+
+/** Exercicio 40 */
+
+const conceitoNotas = [0,1,2,5,4,8, 6.9,7,10,9.5,8,9,3.9]
+function notasConceitos(conceitoNotas){
+    conceitoNotas.forEach(e => {
+        if(e <= 4.9){
+            console.log('Conceito D ' + e)
+        }else if(e > 4.9 && e <= 6.9){
+            console.log('Conceito C ' + e)
+        }else if(e > 6.9 && e <= 8.9){
+            console.log('Conceito B ' + e)
+        }else if(e > 8.9 && e <= 10){
+            console.log('Conceito A ' + e)
+        }else{
+            return 'Nota Invalida'
+        }
+    });
+}
+notasConceitos(conceitoNotas)
