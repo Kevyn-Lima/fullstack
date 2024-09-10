@@ -3,7 +3,7 @@ const axios = require('axios') /** Aqui estamos utilizando a biblioteca axios*/
 
 const pais = f => f.pais === 'China' // forma declarativa de uma Arrow function
 const mulheres = f => f.genero = 'F'// forma declarativa de uma Arrow function
-const salario = (func, funcAtual) => { return func.salario < funcAtual.salario ? func : funcAtual}// forma declarativa de uma Arrow function
+const salario = (func, funcAtual) => { return func.salario < funcAtual.salario ? func : funcAtual} // forma declarativa de uma Arrow function
 
 axios.get(url).then(response => {
     const funcionarios = response.data
