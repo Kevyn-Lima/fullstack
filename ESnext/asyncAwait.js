@@ -34,7 +34,7 @@ let obterAlunos = async () => { // para uma função async é obrigatorio ter o 
     const tC = await getTurma('C')
     return [].concat(tA, tB, tC)
 }//Retorna um objeto AsyncFunction e em cima dele que se chama o metodo then, para ser executado.
-
-obterAlunos()
-    .then(alunos => alunos.map(aluno => aluno.nome))
+    
+    obterAlunos()
+.then(alunos => alunos.map(aluno => aluno.nome))
     .then(nomes => console.log(nomes))

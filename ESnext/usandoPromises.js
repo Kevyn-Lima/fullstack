@@ -40,4 +40,4 @@ Promise.all([getTurma('A'), getTurma('B'), getTurma('C')])
     .then(alunos => alunos.map(aluno => aluno.nome))
     .then(nomes => console.log(nomes))
 
-getTurma('D').catch(e => console.log(e.message))
+getTurma('D').catch(e => console.log(message))
