@@ -14,3 +14,4 @@ console.log(moduloB.boaNoite())
  *  É bom ter o modulo assim, pois somente aquilo que tiver o module.exports, pode ser utilizando fora dele, 
  *  o Restante fica apenas ali dentro daquele arquivo, sendo inacessivel
 */
+

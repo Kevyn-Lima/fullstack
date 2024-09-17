@@ -25,3 +25,4 @@ async function gerarMegaSena(qtdNumeros){
 gerarMegaSena(6)
     .then(console.log)
     .catch(console.log)
+ 
